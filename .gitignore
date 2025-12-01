@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Virtual environments
+venv/
+env/
+.env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Large dataset files (others can download separately)
+# Uncomment these if you don't want to include the dataset
+# dataset/
+# dataset_full/
+
+# Results (generated files - optional to exclude)
+# results/*.png
+# results/*.csv
+
+# Logs
+*.log
+

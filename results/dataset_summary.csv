@@ -1,0 +1,2 @@
+n_users,n_items,n_ratings,avg_ratings_per_user,avg_ratings_per_item,global_avg_rating,sparsity_pct
+53424,10000,5976479,111.87,597.65,3.92,98.88
