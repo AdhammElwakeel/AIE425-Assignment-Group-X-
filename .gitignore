@@ -30,7 +30,7 @@ env/
 # dataset/
 # dataset_full/
 
-# Results (generated files - too large for git)
+# Results (generated files - excluded)
 results/
 
 # Logs
