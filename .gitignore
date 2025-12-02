@@ -30,10 +30,10 @@ env/
 # dataset/
 # dataset_full/
 
-# Results (generated files - optional to exclude)
-# results/*.png
-# results/*.csv
+# Results (generated files - too large for git)
+results/
 
 # Logs
 *.log
 
+dataset/

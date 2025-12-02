@@ -1,16 +1,12 @@
 # Recommender Systems Assignment
 
-This project implements Neighborhood-Based Collaborative Filtering and Clustering-Based Collaborative Filtering using the goodbooks-10k dataset.
+This project implements Neighborhood-Based Collaborative Filtering and Clustering-Based Collaborative Filtering using the Amazon Electronics dataset.
 
 ## Dataset
 
-The goodbooks-10k dataset contains:
+The Amazon Electronics dataset contains product reviews and ratings from Amazon's Electronics category.
 
-- **53,424 unique users**
-- **10,000 books**
-- **~6 million ratings** (on a 1-5 scale)
-
-Source: [goodbooks-10k](https://github.com/zygmuntz/goodbooks-10k)
+Source: [Amazon Product Reviews](https://jmcauley.ucsd.edu/data/amazon/)
 
 ## Project Structure
 
