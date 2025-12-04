@@ -1,17 +1,21 @@
 # Recommender Systems Assignment
 
-This project implements Neighborhood-Based Collaborative Filtering and Clustering-Based Collaborative Filtering using the Amazon Electronics dataset.
+**Course:** AIE425 - Recommender Systems
+
+---
+
+This project implements Neighborhood-Based Collaborative Filtering and Clustering-Based Collaborative Filtering using the Amazon Digital Music dataset.
 
 ## Dataset
 
-The Amazon Electronics dataset contains product reviews and ratings from Amazon's Electronics category.
+The Amazon Digital Music dataset contains product reviews and ratings.
 
 Source: [Amazon Product Reviews](https://jmcauley.ucsd.edu/data/amazon/)
 
 ## Project Structure
 
 ```
-/dataset                                    # Dataset files
+/dataset                                    # Dataset files (Digital_Music.csv)
 /section1_statistical_analysis              # Section 1: Statistical Analysis
 /section2_neighborhood_cf                   # Section 2: Neighborhood CF
     /part1_user_based_cf                    # User-based Collaborative Filtering
@@ -23,6 +27,8 @@ Source: [Amazon Product Reviews](https://jmcauley.ucsd.edu/data/amazon/)
     /part4_cold_start_clustering            # Cold-Start clustering
 /utils                                      # Helper functions
 /results                                    # Output files and visualizations
+README.md                                   # This file
+requirements.txt                            # Python dependencies
 ```
 
 ## Setup
@@ -41,15 +47,17 @@ pip install -r requirements.txt
 ### Section 1: Statistical Analysis
 
 - Dataset preprocessing and validation
-- User and item rating statistics
+- User and item rating statistics (calculated manually with loops)
 - Distribution analysis and visualization
 - Target user/item selection
 - Sparsity and bias analysis
 
 ### Section 2: Neighborhood CF
 
-- Part 1: User-based Collaborative Filtering
-- Part 2: Item-based Collaborative Filtering
+- **Part 1:** User-based Collaborative Filtering
+- **Part 2:** Item-based Collaborative Filtering
+  - Case Study 1: Cosine similarity with mean-centering
+  - Case Study 3: Pearson Correlation Coefficient (PCC)
 
 ### Section 3: Clustering-based CF
 
@@ -58,9 +66,24 @@ pip install -r requirements.txt
 - Part 3: K-means by average raters
 - Part 4: Cold-Start clustering
 
-## Notes
+## Technical Notes
 
+- All statistical calculations are performed manually using loops (no built-in functions like `.mean()`, `.std()`, etc.)
 - All values are rounded to 2 decimal places
 - Ratings are on a 1-5 scale
-- All file paths are relative (no absolute paths)
+- **All file paths are relative** (no absolute paths like `C:/Users/...`)
 - Code is compatible with Visual Studio Code
+- No proprietary or platform-specific code
+
+## How to Run
+
+1. Open the project folder in Visual Studio Code
+2. Ensure Python environment is set up with required packages
+3. Navigate to each section folder and run the Jupyter notebooks
+4. Results are saved in the `/results` directory
+
+## File Requirements
+
+- All notebooks can be opened and run in VS Code without modifications
+- All paths are relative to ensure portability across machines
+- Student information appears at the top of each file

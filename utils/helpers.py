@@ -6,7 +6,7 @@ Contains helper functions for data loading, processing, and saving.
 import pandas as pd
 import numpy as np
 import os
-from typing import Tuple, Dict, Any
+from typing import Tuple, Dict, Any, List
 
 
 def get_project_root() -> str:
@@ -22,36 +22,23 @@ def get_project_root() -> str:
 
 def load_ratings(dataset_path: str = None) -> pd.DataFrame:
     """
-    Load the ratings dataset.
+    Load the Digital Music ratings dataset.
     
     Args:
         dataset_path: Path to the dataset directory. If None, uses default.
     
     Returns:
-        pd.DataFrame: Ratings dataframe with columns [user_id, book_id, rating].
+        pd.DataFrame: Ratings dataframe with columns [item_id, user_id, rating, timestamp].
     """
     if dataset_path is None:
         dataset_path = os.path.join(get_project_root(), 'dataset')
     
-    ratings_path = os.path.join(dataset_path, 'ratings.csv')
-    return pd.read_csv(ratings_path)
-
-
-def load_books(dataset_path: str = None) -> pd.DataFrame:
-    """
-    Load the books dataset.
-    
-    Args:
-        dataset_path: Path to the dataset directory. If None, uses default.
-    
-    Returns:
-        pd.DataFrame: Books dataframe.
-    """
-    if dataset_path is None:
-        dataset_path = os.path.join(get_project_root(), 'dataset')
-    
-    books_path = os.path.join(dataset_path, 'books.csv')
-    return pd.read_csv(books_path)
+    ratings_path = os.path.join(dataset_path, 'Digital_Music.csv')
+    return pd.read_csv(
+        ratings_path,
+        header=None,
+        names=['item_id', 'user_id', 'rating', 'timestamp']
+    )
 
 
 def save_results(data: Any, filename: str, results_path: str = None) -> str:
@@ -161,3 +148,139 @@ def get_percentile_group(value: float, max_value: float) -> str:
     else:
         return 'G10'
 
+
+# ============================================================================
+# Manual Calculation Functions (No Built-in Statistical Functions)
+# ============================================================================
+
+def manual_mean(values: List[float]) -> float:
+    """
+    Calculate mean manually using a loop.
+    
+    Args:
+        values: List of numeric values.
+    
+    Returns:
+        float: The mean value.
+    """
+    total = 0
+    count = 0
+    for val in values:
+        total += val
+        count += 1
+    return total / count if count > 0 else 0
+
+
+def manual_median(values: List[float]) -> float:
+    """
+    Calculate median manually using sorting.
+    
+    Args:
+        values: List of numeric values.
+    
+    Returns:
+        float: The median value.
+    """
+    sorted_vals = sorted(values)
+    n = len(sorted_vals)
+    if n == 0:
+        return 0
+    if n % 2 == 0:
+        return (sorted_vals[n//2 - 1] + sorted_vals[n//2]) / 2
+    else:
+        return sorted_vals[n//2]
+
+
+def manual_std(values: List[float], mean: float = None) -> float:
+    """
+    Calculate standard deviation manually.
+    
+    Args:
+        values: List of numeric values.
+        mean: Pre-calculated mean (optional).
+    
+    Returns:
+        float: The standard deviation.
+    """
+    if mean is None:
+        mean = manual_mean(values)
+    
+    variance_sum = 0
+    count = 0
+    for val in values:
+        variance_sum += (val - mean) ** 2
+        count += 1
+    
+    if count == 0:
+        return 0
+    variance = variance_sum / count
+    return variance ** 0.5
+
+
+def manual_min(values: List[float]) -> float:
+    """
+    Find minimum value manually using a loop.
+    
+    Args:
+        values: List of numeric values.
+    
+    Returns:
+        float: The minimum value.
+    """
+    min_val = None
+    for val in values:
+        if min_val is None or val < min_val:
+            min_val = val
+    return min_val
+
+
+def manual_max(values: List[float]) -> float:
+    """
+    Find maximum value manually using a loop.
+    
+    Args:
+        values: List of numeric values.
+    
+    Returns:
+        float: The maximum value.
+    """
+    max_val = None
+    for val in values:
+        if max_val is None or val > max_val:
+            max_val = val
+    return max_val
+
+
+def manual_count_unique(values: List) -> int:
+    """
+    Count unique values manually using a set.
+    
+    Args:
+        values: List of values.
+    
+    Returns:
+        int: Number of unique values.
+    """
+    unique = set()
+    for val in values:
+        unique.add(val)
+    return len(unique)
+
+
+def manual_value_counts(values: List) -> Dict:
+    """
+    Count occurrences of each value manually.
+    
+    Args:
+        values: List of values.
+    
+    Returns:
+        Dict: Dictionary with value counts.
+    """
+    counts = {}
+    for val in values:
+        if val in counts:
+            counts[val] += 1
+        else:
+            counts[val] = 1
+    return counts

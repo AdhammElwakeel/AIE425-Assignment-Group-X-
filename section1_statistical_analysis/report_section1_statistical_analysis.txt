@@ -1,0 +1,220 @@
+================================================================================
+                    SECTION 1: STATISTICAL ANALYSIS REPORT
+                         Amazon Digital Music Dataset
+================================================================================
+
+Author: Adham Mohmed elsaid elwakel
+Student ID: 222 100 195
+
+================================================================================
+                            1. DATASET OVERVIEW
+================================================================================
+
+Dataset: Amazon Digital Music Reviews
+
+VALIDATION RESULTS:
+┌─────────────────────┬────────────────┬─────────────────┬────────┐
+│ Metric              │ Value          │ Requirement     │ Status │
+├─────────────────────┼────────────────┼─────────────────┼────────┤
+│ Number of Users     │ 840,372        │ ≥ 100,000       │   ✓    │
+│ Number of Items     │ 456,992        │ ≥ 1,000         │   ✓    │
+│ Number of Ratings   │ 1,584,082      │ ≥ 1,000,000     │   ✓    │
+│ Rating Scale        │ 1.0 - 5.0      │ 1-5 scale       │   ✓    │
+└─────────────────────┴────────────────┴─────────────────┴────────┘
+
+All dataset requirements are satisfied.
+
+================================================================================
+                      2. USER STATISTICS (n_u, r_u)
+================================================================================
+
+NUMBER OF RATINGS PER USER (n_u):
+─────────────────────────────────
+• Total unique users: 840,372
+• Minimum ratings per user: 1
+• Maximum ratings per user: 1,326
+• Mean ratings per user: 1.88
+• Median ratings per user: 1.0
+
+User Activity Distribution:
+• Users with 1 rating: 602,024 (71.6%)
+• Users with 2-5 ratings: 204,332 (24.3%)
+• Users with >5 ratings: 34,016 (4.0%)
+
+OBSERVATION: The dataset exhibits extremely sparse user activity, with over 71%
+of users having only a single rating.
+
+AVERAGE RATING PER USER (r_u):
+──────────────────────────────
+• Minimum average rating: 1.0
+• Maximum average rating: 5.0
+• Mean of average ratings: 4.65
+• Standard deviation: 0.72
+
+================================================================================
+                      3. ITEM STATISTICS (n_i, r_i)
+================================================================================
+
+NUMBER OF RATINGS PER ITEM (n_i):
+─────────────────────────────────
+• Total unique items: 456,992
+• Minimum ratings per item: 1
+• Maximum ratings per item: 3,411
+• Mean ratings per item: 3.47
+• Median ratings per item: 1.0
+
+AVERAGE RATING PER ITEM (r_i):
+──────────────────────────────
+• Minimum average rating: 1.0
+• Maximum average rating: 5.0
+• Mean of average ratings: 4.65
+• Standard deviation: 0.72
+
+================================================================================
+                    4. RATING DISTRIBUTION ANALYSIS
+================================================================================
+
+RATING VALUE DISTRIBUTION:
+┌────────┬─────────────┬────────────┐
+│ Rating │ Count       │ Percentage │
+├────────┼─────────────┼────────────┤
+│   1    │ 43,108      │   2.72%    │
+│   2    │ 23,551      │   1.49%    │
+│   3    │ 57,347      │   3.62%    │
+│   4    │ 179,929     │  11.36%    │
+│   5    │ 1,280,147   │  80.81%    │
+└────────┴─────────────┴────────────┘
+Total: 1,584,082 ratings
+
+KEY INSIGHT: Extremely strong POSITIVE RATING BIAS:
+• 80.81% of all ratings are 5-star ratings
+• 92.17% of ratings are 4 or 5 stars
+• Only 4.21% of ratings are 1 or 2 stars
+
+================================================================================
+                  5. PRODUCT GROUPING BY AVERAGE RATING
+================================================================================
+
+Products classified into 10 groups (G1-G10) based on average rating percentage:
+
+GROUP DISTRIBUTION:
+┌───────┬─────────────────┬────────────────┐
+│ Group │ Number of Items │ Percentage     │
+├───────┼─────────────────┼────────────────┤
+│ G1    │ 0               │ 0.00%          │
+│ G2    │ 0               │ 0.00%          │
+│ G3    │ 0               │ 0.00%          │
+│ G4    │ 8,871           │ 1.94%          │
+│ G5    │ 242             │ 0.05%          │
+│ G6    │ 4,577           │ 1.00%          │
+│ G7    │ 1,032           │ 0.23%          │
+│ G8    │ 14,857          │ 3.25%          │
+│ G9    │ 3,473           │ 0.76%          │
+│ G10   │ 423,940         │ 92.77%         │
+└───────┴─────────────────┴────────────────┘
+
+KEY INSIGHT: 92.77% of items fall into G10 (highest rated), confirming
+the strong positive bias.
+
+================================================================================
+                      6. TARGET USER SELECTION
+================================================================================
+
+Selected target users based on rating activity percentile:
+
+┌────────┬──────────────────┬─────────────┬────────────────────┐
+│ Target │ User ID          │ Num Ratings │ Percentile Rank    │
+├────────┼──────────────────┼─────────────┼────────────────────┤
+│ U1     │ A10M98IRLT7VXA   │ 1           │ 35.82%             │
+│ U2     │ A3STP1WNCC5KPK   │ 2           │ 79.15%             │
+│ U3     │ A2T9FICTMRFR0J   │ 7           │ 97.18%             │
+└────────┴──────────────────┴─────────────┴────────────────────┘
+
+================================================================================
+                      7. TARGET ITEM SELECTION
+================================================================================
+
+Selected lowest-rated items with sufficient ratings (≥50):
+
+┌────────┬──────────────┬────────────────┬─────────────┐
+│ Target │ Item ID      │ Average Rating │ Num Ratings │
+├────────┼──────────────┼────────────────┼─────────────┤
+│ I1     │ B00S33PD6W   │ 1.00           │ 73          │
+│ I2     │ B00DO4LN82   │ 1.02           │ 64          │
+└────────┴──────────────┴────────────────┴─────────────┘
+
+================================================================================
+                       8. CO-RATING ANALYSIS
+================================================================================
+
+CO-RATING USERS:
+┌────────┬──────────────────┬─────────────────────┐
+│ Target │ User ID          │ Co-rating Users     │
+├────────┼──────────────────┼─────────────────────┤
+│ U1     │ A10M98IRLT7VXA   │ 841                 │
+│ U2     │ A3STP1WNCC5KPK   │ 282                 │
+│ U3     │ A2T9FICTMRFR0J   │ 1,678               │
+└────────┴──────────────────┴─────────────────────┘
+
+CO-RATED ITEMS:
+┌────────┬──────────────┬─────────────────────┐
+│ Target │ Item ID      │ Co-rated Items      │
+├────────┼──────────────┼─────────────────────┤
+│ I1     │ B00S33PD6W   │ 4                   │
+│ I2     │ B00DO4LN82   │ 3                   │
+└────────┴──────────────┴─────────────────────┘
+
+================================================================================
+                    9. THRESHOLD β ANALYSIS
+================================================================================
+
+Users with ≥ 30% item overlap with target users:
+
+┌────────┬─────────────┬───────────────┬─────────────────┐
+│ Target │ Items Rated │ 30% Threshold │ β (Users)       │
+├────────┼─────────────┼───────────────┼─────────────────┤
+│ U1     │ 1           │ 1 item        │ 841             │
+│ U2     │ 2           │ 1 item        │ 282             │
+│ U3     │ 7           │ 2 items       │ 19              │
+└────────┴─────────────┴───────────────┴─────────────────┘
+
+================================================================================
+                   10. MATRIX SPARSITY ANALYSIS
+================================================================================
+
+SPARSITY CALCULATION:
+• Total possible ratings: 840,372 × 456,992 = 384,124,853,824
+• Actual ratings: 1,584,082
+• Matrix Sparsity: 99.9996%
+• Matrix Density: 0.0004%
+
+================================================================================
+                     11. RATING BIAS ANALYSIS
+================================================================================
+
+• Global Mean Rating: 4.66 / 5.0
+• 80.81% of ratings are 5-star
+• Strong positive skew in distribution
+
+================================================================================
+                   12. LONG-TAIL DISTRIBUTION
+================================================================================
+
+• Top 10% of items: ~75% of ratings
+• Top 20% of items: ~87% of ratings
+• Bottom 50% of items: ~5% of ratings
+
+================================================================================
+                       13. KEY FINDINGS
+================================================================================
+
+1. DATASET SCALE: 840K users, 457K items, 1.58M ratings ✓
+3. STRONG POSITIVE BIAS: 80.8% are 5-star ratings
+4. SPARSE USER ACTIVITY: 71.6% users have only 1 rating
+5. LONG-TAIL DISTRIBUTION: Top 20% items get 87% of ratings
+6. LIMITED CO-RATING: Target items have only 3-4 co-rated items
+
+================================================================================
+                           END OF REPORT
+================================================================================
+

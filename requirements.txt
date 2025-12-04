@@ -1,10 +1,23 @@
-pandas>=2.0.0
-numpy>=1.24.0
-matplotlib>=3.7.0
-seaborn>=0.12.0
-scikit-learn>=1.3.0
-scipy>=1.11.0
-jupyter>=1.0.0
-notebook>=7.0.0
-tqdm>=4.65.0
+# Recommender Systems Assignment - Python Dependencies
+# Author: Adham Mohamed Elsaid Elwakel
+# Student ID: 222 100 195
+# Course: AIE425 - Recommender Systems
 
+# Core data manipulation
+pandas>=1.5.0
+numpy>=1.21.0
+
+# Visualization
+matplotlib>=3.5.0
+seaborn>=0.11.0
+
+# Jupyter support
+jupyter>=1.0.0
+notebook>=6.0.0
+ipykernel>=6.0.0
+
+# Machine Learning (for clustering)
+scikit-learn>=1.0.0
+
+# Progress bars (optional)
+tqdm>=4.60.0
