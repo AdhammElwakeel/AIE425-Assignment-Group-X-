@@ -40,6 +40,30 @@ pip install -r requirements.txt
 2. Run notebooks in order:
    - Start with `section1_statistical_analysis/statistical_analysis.ipynb`
 
+## Sections
+
+### Section 1: Statistical Analysis
+
+- Dataset preprocessing and validation
+- User and item rating statistics (calculated manually with loops)
+- Distribution analysis and visualization
+- Target user/item selection
+- Sparsity and bias analysis
+
+### Section 2: Neighborhood CF
+
+- **Part 1:** User-based Collaborative Filtering
+- **Part 2:** Item-based Collaborative Filtering
+  - Case Study 1: Cosine similarity with mean-centering
+  - Case Study 3: Pearson Correlation Coefficient (PCC)
+
+### Section 3: Clustering-based CF
+
+- Part 1: K-means by average user ratings
+- Part 2: K-means by common ratings
+- Part 3: K-means by average raters
+- Part 4: Cold-Start clustering
+
 ## How to Run
 
 1. Open the project folder in Visual Studio Code
