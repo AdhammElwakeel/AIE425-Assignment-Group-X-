@@ -31,7 +31,7 @@ dataset/
  dataset_full/
 
 # Results (generated files - excluded)
-results/
+# results/
 
 # Logs
 *.log
