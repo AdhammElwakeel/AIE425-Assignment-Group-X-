@@ -66,14 +66,7 @@ pip install -r requirements.txt
 - Part 3: K-means by average raters
 - Part 4: Cold-Start clustering
 
-## Technical Notes
 
-- All statistical calculations are performed manually using loops (no built-in functions like `.mean()`, `.std()`, etc.)
-- All values are rounded to 2 decimal places
-- Ratings are on a 1-5 scale
-- **All file paths are relative** (no absolute paths like `C:/Users/...`)
-- Code is compatible with Visual Studio Code
-- No proprietary or platform-specific code
 
 ## How to Run
 
