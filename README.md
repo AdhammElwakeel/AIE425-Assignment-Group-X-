@@ -10,7 +10,7 @@ This project implements Neighborhood-Based Collaborative Filtering and Clusterin
 
 The Amazon Digital Music dataset contains product reviews and ratings.
 
-Source: [Amazon Product Reviews](https://jmcauley.ucsd.edu/data/amazon/)
+Source: [Amazon Product Reviews](https://jmcauley.ucsd.edu/data/amazon/](https://jmcauley.ucsd.edu/data/amazon_v2/categoryFilesSmall/Digital_Music.csv))
 
 ### Dataset Validation Results
 
