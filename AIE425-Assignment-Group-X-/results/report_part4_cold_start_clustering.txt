@@ -1,0 +1,65 @@
+
+================================================================================
+PART 4: COLD-START CLUSTERING - COMPREHENSIVE REPORT
+================================================================================
+
+DATASET OVERVIEW:
+-----------------
+Total Ratings: 1,584,082
+Unique Users: 840,372
+Unique Items: 456,992
+
+COLD-START SIMULATION:
+----------------------
+Cold-Start Users: 100
+Cold-Start Items: 50
+Avg Visible Ratings per User: 15.1
+Avg Visible Ratings per Item: 19.5
+
+USER CLUSTERING RESULTS:
+------------------------
+Number of Clusters: 10
+Users Assigned: 100
+Avg Assignment Confidence: 0.7225
+
+ITEM CLUSTERING RESULTS:
+------------------------
+Number of Clusters: 10
+Items Assigned: 50
+Avg Assignment Confidence: 0.4003
+
+RECOMMENDATION RESULTS:
+-----------------------
+Users with Recommendations: 100
+Items with Predictions: 50
+
+EVALUATION METRICS (Users):
+---------------------------
+MAE: 0.0000
+RMSE: 0.0000
+Precision@10: 0.1000
+Recall@10: 0.0085
+
+EVALUATION METRICS (Items):
+---------------------------
+MAE: 0.8920
+RMSE: 1.0143
+
+CONFIDENCE ANALYSIS:
+--------------------
+Ambiguous Users (conf < 0.5): 27 (27.0%)
+Ambiguous Items (conf < 0.5): 37 (74.0%)
+
+ROBUSTNESS FINDINGS:
+--------------------
+Minimum ratings for 70% accuracy: ~20 ratings
+
+OUTPUT FILES GENERATED:
+-----------------------
+- part4_final_summary.csv
+- part4_confidence_analysis.png
+- part4_robustness_analysis.png
+- part4_task8_accuracy_vs_ratings.png
+- report_part4_cold_start_clustering.txt
+
+================================================================================

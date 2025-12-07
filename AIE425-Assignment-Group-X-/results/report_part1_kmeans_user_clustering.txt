@@ -1,0 +1,78 @@
+
+================================================================================
+PART 1: K-MEANS CLUSTERING BASED ON USER AVERAGE RATINGS - COMPREHENSIVE REPORT
+================================================================================
+
+DATASET OVERVIEW:
+-----------------
+Total Ratings: 1,584,082
+Unique Users: 840,372
+Unique Items: 456,992
+
+FEATURE ENGINEERING:
+--------------------
+Feature: Average Rating per User
+Mean (μ): 4.6452
+Standard Deviation (σ): 0.8613
+Normalization: Z-score (x - μ) / σ
+
+K-MEANS CLUSTERING RESULTS:
+---------------------------
+K Values Tested: [5, 10, 15, 20, 30, 50]
+Optimal K: 50
+Best Silhouette Score: 0.9892
+Best WCSS: 4.58
+
+CLUSTERING METRICS BY K:
+------------------------
+ K    WCSS  Silhouette_Score
+ 5 9869.81              0.94
+10  557.58              0.97
+15  158.59              0.98
+20   67.48              0.98
+30   18.99              0.99
+50    4.58              0.99
+
+CLUSTER DISTRIBUTION (K = 50):
+---------------------------------------
+Total Users: 840,372
+Largest Cluster: 647,508 users
+Smallest Cluster: 30 users
+
+GENEROUS vs STRICT RATERS:
+--------------------------
+Overall Mean Rating: 4.65
+Generous Clusters (above mean): 10
+Strict Clusters (below/at mean): 40
+
+COMPUTATIONAL EFFICIENCY:
+-------------------------
+Without Clustering: 353,112,129,006 user pairs
+With Clustering: 213,075,012,526 user pairs
+Speedup Factor: 1.66x
+Reduction: 39.66%
+
+ROBUSTNESS TESTING:
+-------------------
+Number of Runs: 3
+Average ARI: 0.9999
+Stability: STABLE
+
+PREDICTIONS FOR TARGET USERS:
+-----------------------------
+Target Users: ['U1', 'U2', 'U3']
+Target Items: ['I1', 'I2']
+U1: I1=5.00, I2=5.00
+U2: I1=5.00, I2=5.00
+U3: I1=4.14, I2=4.14
+
+OUTPUT FILES GENERATED:
+-----------------------
+- part1_elbow_silhouette.png
+- part1_cluster_analysis.png
+- part1_clustering_results.csv
+- part1_user_cluster_assignments.csv
+- part1_cluster_centroids.csv
+- report_part1_kmeans_user_clustering.txt
+
+================================================================================

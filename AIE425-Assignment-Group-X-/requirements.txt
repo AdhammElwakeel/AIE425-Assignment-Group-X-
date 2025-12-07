@@ -1,0 +1,23 @@
+# Recommender Systems Assignment - Python Dependencies
+# Author: Adham Mohamed Elsaid Elwakel
+# Student ID: 222 100 195
+# Course: AIE425 - Recommender Systems
+
+# Core data manipulation
+pandas>=1.5.0
+numpy>=1.21.0
+
+# Visualization
+matplotlib>=3.5.0
+seaborn>=0.11.0
+
+# Jupyter support
+jupyter>=1.0.0
+notebook>=6.0.0
+ipykernel>=6.0.0
+
+# Machine Learning (for clustering)
+scikit-learn>=1.0.0
+
+# Progress bars (optional)
+tqdm>=4.60.0
