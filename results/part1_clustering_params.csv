@@ -1,0 +1,2 @@
+n_clusters,random_state,n_init,max_iter,mu_global_mean,std_dev,total_users
+5,42,10,300,4.6452,0.8613,840372

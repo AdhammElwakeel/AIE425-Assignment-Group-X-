@@ -1,0 +1,7 @@
+user_id,target_item,item_id,actual_rating,pred_cluster,pred_global,error_cluster,error_global,n_similar_cluster,n_similar_global
+A1IN3OMS22MQ4B,I1,B00NIJY63W,1.0,,,,,0,0
+A1IN3OMS22MQ4B,I2,B00S33PD6W,,,,,,0,0
+AJYJEDLS5R0KP,I1,B00NIJY63W,1.0,,,,,0,0
+AJYJEDLS5R0KP,I2,B00S33PD6W,,,,,,0,0
+A2S75M1RQB0XBP,I1,B00NIJY63W,1.0,,,,,0,0
+A2S75M1RQB0XBP,I2,B00S33PD6W,,,,,,0,0

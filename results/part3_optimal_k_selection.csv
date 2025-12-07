@@ -1,0 +1,2 @@
+optimal_K,silhouette_score,wcss,selection_criteria
+50,0.89909197735613,292434.7084651829,Highest Silhouette Score

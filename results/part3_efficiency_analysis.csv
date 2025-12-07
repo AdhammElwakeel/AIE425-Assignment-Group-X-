@@ -1,0 +1,2 @@
+n_items,n_users,item_pairs_no_clustering,item_pairs_with_clustering,item_speedup,user_pairs_no_clustering,user_pairs_with_clustering,user_speedup,reduction_pct
+456992,840372,104420615536,28975251782,3.6037863043132607,353112129006,7061830750.0,50.00291588778165,72.25140683832637

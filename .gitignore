@@ -28,7 +28,7 @@ env/
 # Large dataset files (others can download separately)
 # Uncomment these if you don't want to include the dataset
 dataset/
- dataset_full/
+dataset_full/
 
 # Results (generated files - excluded)
 # results/
@@ -36,7 +36,6 @@ dataset/
 # Logs
 *.log
 
-dataset/
-
+# Ignore dataset CSV files only
 Digital_Music.csv
-*.csv
+dataset/*.csv

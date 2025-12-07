@@ -1,0 +1,2 @@
+n_users,n_items,user_to_item_ratio,item_speedup,user_speedup,recommended_approach,hybrid_feasible
+840372,456992,1.8389205937959527,3.6037863043132607,50.00291588778165,Item-Based,True
